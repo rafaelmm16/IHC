@@ -13,7 +13,7 @@ export default function Header({ title, showCancel = true }: HeaderProps) {
   const navigation = useNavigation();
 
   function handleGoBackToAppHomePage() {
-    navigation.navigate('SGMap')
+    navigation.navigate('SGMap');
   }
 
   return (
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#F5AB35',
-    fontFamily: 'Nunito_600SemiBold',
+    fontFamily: 'Roboto_700Bold',
     fontSize: 25,
     fontWeight: '600',
   }

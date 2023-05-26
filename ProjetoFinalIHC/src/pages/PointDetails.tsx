@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
   },
 
   scheduleText: {
-    fontFamily: 'Nunito_600SemiBold',
+    fontFamily: 'Roboto_700Bold',
     fontSize: 16,
     lineHeight: 24,
     marginTop: 20,
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
   },
 
   contactButtonText: {
-    fontFamily: 'Nunito_800ExtraBold',
+    fontFamily: 'Roboto_900Black',
     color: '#FFF',
     fontSize: 16,
     marginLeft: 16,

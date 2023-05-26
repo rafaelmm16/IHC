@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { useFonts } from 'expo-font';
-import { Roboto_700Bold } from '@expo-google-fonts/roboto';
-import { Roboto_500Medium, Roboto_900Black } from '@expo-google-fonts/roboto'
+import { Roboto_500Medium, Roboto_700Bold, Roboto_900Black } from '@expo-google-fonts/roboto'
 import Routes from './src/routes';
 
 export default function App() {

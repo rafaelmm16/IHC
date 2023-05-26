@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
 
     label: {
         color: '#8fa7b3',
-        fontFamily: 'Nunito_600SemiBold',
+        fontFamily: 'Roboto_700Bold',
         marginBottom: 2,
     },
 
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     },
 
     nextButtonText: {
-        fontFamily: 'Nunito_800ExtraBold',
+        fontFamily: 'oboto_900Black',
         fontSize: 16,
         color: '#FFF',
     },

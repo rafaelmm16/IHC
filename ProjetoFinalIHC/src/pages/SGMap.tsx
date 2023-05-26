@@ -8,7 +8,8 @@ import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import MapViewDirections from 'react-native-maps-directions';
 //import api from '../services/api';
-
+import { Stack, IconButton } from "@react-native-material/core";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 interface Point {
   id: number;
   name: string;
@@ -83,18 +84,18 @@ export default function SGMap() {
 
       <View style={styles.footer}>
         <Text style={styles.footerText}> Mapa </Text>
-        <RectButton style={styles.createPointButton} onPress={handleNavigateToSGMap}>
-          <Feather name="map" size={20} color="#F5AB35" />
+        <RectButton style={styles.icon} onPress={handleNavigateToSGMap}>
+        <IconButton icon={props => <Icon name="eye" {...props} />} />
         </RectButton>
 
         <Text style={styles.footerText}> Horários </Text>
-        <RectButton style={styles.createPointButton} onPress={handleNavigateToHours}>
-          <Feather name="clock" size={20} color="#F5AB35" />
+        <RectButton style={styles.icon} onPress={handleNavigateToHours}>
+        <IconButton icon={props => <Icon name="dots-vertical" {...props} />} />
         </RectButton>
 
         <Text style={styles.footerText}> Perfil </Text>
-        <RectButton style={styles.createPointButton} onPress={handleNavigateToProfile}>
-          <Feather name="user" size={20} color="#F5AB35" />
+        <RectButton style={styles.icon} onPress={handleNavigateToProfile}>
+        <IconButton icon={props => <Icon name="magnify" {...props} />} />
         </RectButton>
       </View>
     </View>
@@ -124,14 +125,14 @@ const styles = StyleSheet.create({
   },
   footer: {
     position: 'absolute',
-    width: 450,
-    height: 72,
-    top: 873,
-    backgroundColor: '#FFF',
+    width: 491,
+    height: 76,
+    top: 1015,
+    backgroundColor: '#499c6f',
     elevation: 4,
     justifyContent: 'space-around',
     alignContent: 'space-around',
-    alignItems: 'center',
+    //alignItems: 'center',
     flexDirection: 'row'
   },
   footerText: {
@@ -142,12 +143,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     //padding: 4,
   },
-  createPointButton: {
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    alignSelf: 'center',
-    alignContent: 'stretch',
-    right: 40,
-    bottom: 5,
+  icon: {
+    //alignItems: 'stretch'
+    //justifyContent: 'space-evenly',
+    //alignItems: 'center',
+    //alignSelf: 'center',
+    //alignContent: 'stretch',
+    //right: 40,
+    //bottom: 5,
   }
 });
