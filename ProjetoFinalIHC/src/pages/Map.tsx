@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
-import { Feather } from '@expo/vector-icons';
 
 import MapMarker from '../images/map-marker.png';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import MapViewDirections from 'react-native-maps-directions';
-//import api from '../services/api';
-import { Stack, IconButton } from "@react-native-material/core";
+import { Stack, IconButton, Button } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 interface Point {
   id: number;
@@ -17,18 +15,12 @@ interface Point {
   longitude: number;
 }
 
-export default function SGMap() {
+export default function Map() {
   const [points, setPoints] = useState<Point[]>([]);
   const navigation = useNavigation();
   
-  /* useFocusEffect(()=> {
-    api.get('points').then(response => {
-      setPoints(response.data);
-    })
-  }); */
-  
   function handleNavigateToPointDetails(id: number){
-    navigation.navigate('PointDetails', { id });
+    navigation.navigate('PointDetails');
   }
   function handleNavigateToCreatePoint(){
     navigation.navigate('SelectMapPosition');
@@ -36,8 +28,8 @@ export default function SGMap() {
   function handleNavigateToProfile(){
     navigation.navigate('Profile');
   }
-  function handleNavigateToSGMap(){
-    navigation.navigate('SGMap');
+  function handleNavigateToMap(){
+    navigation.navigate('Map');
   }
   function handleNavigateToHours(){
     navigation.navigate('Hours');
@@ -83,20 +75,16 @@ export default function SGMap() {
       </MapView>
 
       <View style={styles.footer}>
-        <Text style={styles.footerText}> Mapa </Text>
-        <RectButton style={styles.icon} onPress={handleNavigateToSGMap}>
-        <IconButton icon={props => <Icon name="eye" {...props} />} />
-        </RectButton>
+        
+        <IconButton icon={props => <Icon name="map" {...props} />} />
+        <Button variant="text" title="Mapa" onPress={handleNavigateToMap}/>
 
-        <Text style={styles.footerText}> Horários </Text>
-        <RectButton style={styles.icon} onPress={handleNavigateToHours}>
-        <IconButton icon={props => <Icon name="dots-vertical" {...props} />} />
-        </RectButton>
+        <IconButton icon={props => <Icon name="clock" {...props} />} />
+        <Button variant="text" title="Horarios" />
 
-        <Text style={styles.footerText}> Perfil </Text>
-        <RectButton style={styles.icon} onPress={handleNavigateToProfile}>
-        <IconButton icon={props => <Icon name="magnify" {...props} />} />
-        </RectButton>
+        <IconButton icon={props => <Icon name="account" {...props} />} />
+        <Button variant="text" title="Perfil" onPress={handleNavigateToProfile}/>
+        
       </View>
     </View>
   )
@@ -144,10 +132,10 @@ const styles = StyleSheet.create({
     //padding: 4,
   },
   icon: {
-    //alignItems: 'stretch'
+    //alignItems: 'stretch',
     //justifyContent: 'space-evenly',
     //alignItems: 'center',
-    //alignSelf: 'center',
+    alignSelf: 'center',
     //alignContent: 'stretch',
     //right: 40,
     //bottom: 5,

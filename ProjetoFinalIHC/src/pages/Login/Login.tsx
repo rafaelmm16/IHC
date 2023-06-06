@@ -4,8 +4,6 @@ import { Feather } from '@expo/vector-icons';
 
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
-//import api from '../../services/api';
-
 interface Point {
     id: number;
     name: string;
@@ -17,13 +15,8 @@ export default function Login() {
     const [points, setPoints] = useState<Point[]>([]);
     const navigation = useNavigation();
 
-    //useFocusEffect(() => {
-        //api.get('points').then(response => {
-            //setPoints(response.data);
-        //})
-    //});
-    function handleNavigateToSGMap() {
-        navigation.navigate('SGMap');
+    function handleNavigateToMap() {
+        navigation.navigate('Map');
     }
     function handleNavigateToCreatUser() {
         navigation.navigate('CreatUser');
@@ -55,7 +48,7 @@ export default function Login() {
                     <Text style={styles.registerText}>Quero me cadastrar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonBlank} onPress={handleNavigateToSGMap}>
+                <TouchableOpacity style={styles.buttonBlank} onPress={handleNavigateToMap}>
                     <Text style={styles.registerText}>Entrar como convidado</Text>
                 </TouchableOpacity>
             </View>

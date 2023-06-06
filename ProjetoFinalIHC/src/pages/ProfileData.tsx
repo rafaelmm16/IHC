@@ -4,7 +4,6 @@ import { Feather } from '@expo/vector-icons';
 
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
-//import api from '../services/api';
 
 interface Point {
     id: number;
@@ -17,17 +16,11 @@ export default function ProfileData() {
     const [points, setPoints] = useState<Point[]>([]);
     const navigation = useNavigation();
 
-    /* useFocusEffect(() => {
-        api.get('points').then(response => {
-            setPoints(response.data);
-        })
-    }); */
-
     function handleNavigateToHours(){
         navigation.navigate('Hours');
       }
-      function handleNavigateToSGMap(){
-        navigation.navigate('SGMap');
+      function handleNavigateToMap(){
+        navigation.navigate('Map');
       }
       function handleNavigateToProfile(){
         navigation.navigate('Profile');
@@ -68,7 +61,7 @@ export default function ProfileData() {
 
                 <View style={styles.footer}>
                     <Text style={styles.Bottom}> Mapa </Text>
-                    <RectButton style={styles.createPointButton} onPress={handleNavigateToSGMap}>
+                    <RectButton style={styles.createPointButton} onPress={handleNavigateToMap}>
                         <Feather name="map" size={20} color="#F5AB35" />
                     </RectButton>
 

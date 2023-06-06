@@ -13,7 +13,7 @@ export default function Header({ title, showCancel = true }: HeaderProps) {
   const navigation = useNavigation();
 
   function handleGoBackToAppHomePage() {
-    navigation.navigate('SGMap');
+    navigation.navigate('Map');
   }
 
   return (
@@ -40,9 +40,6 @@ export default function Header({ title, showCancel = true }: HeaderProps) {
 const styles = StyleSheet.create({ 
   container:  {
     alignItems: 'center',
-    //backgroundColor: '#F9FAFC',
-    //borderBottomWidth: 1,
-    //borderColor: '#DDE3F0',
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 24,

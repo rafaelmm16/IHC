@@ -5,7 +5,6 @@ import { Feather } from '@expo/vector-icons';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import {Picker} from '@react-native-picker/picker';
-//import api from '../../services/api';
 
 interface Point {
     id: number;
@@ -18,13 +17,8 @@ export default function Login() {
     const [points, setPoints] = useState<Point[]>([]);
     const navigation = useNavigation();
 
-    useFocusEffect(() => {
-        api.get('points').then(response => {
-            setPoints(response.data);
-        })
-    });
-    function handleNavigateToSGMap() {
-        navigation.navigate('SGMap');
+    function handleNavigateToMap() {
+        navigation.navigate('Map');
     }
 
     const [selected, setSelected] = useState();
@@ -74,7 +68,7 @@ export default function Login() {
                 <TextInput
                     style={styles.input}
                 />
-                <TouchableOpacity style={styles.buttonBlank} onPress={handleNavigateToSGMap}>
+                <TouchableOpacity style={styles.buttonBlank} onPress={handleNavigateToMap}>
                     <Text style={styles.registerText}>Finalizar</Text>
                 </TouchableOpacity>
             </View>

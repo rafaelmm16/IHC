@@ -4,7 +4,6 @@ import { Feather } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
-//import api from '../../services/api';
 
 interface PointDataRouteParams {
   position: {
@@ -48,7 +47,7 @@ export default function PointData() {
 
     await api.post('points', data);
 
-    navigation.navigate('SGMap');
+    navigation.navigate('Map');
   }
 
   async function handleSelectImages() {

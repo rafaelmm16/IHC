@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const { Navigator, Screen } = createStackNavigator();
 
-import SGMap from './pages/SGMap';
+import Map from './pages/Map';
 import PointDetails from './pages/PointDetails';
 import SelectMapPosition from './pages/CreatePoint/SelectMapPosition';
 import PointData from './pages/CreatePoint/PointData';
@@ -30,7 +30,7 @@ export default function Routes() {
           headerShown: false,
           header: () => <Header showCancel={false} title="Cadastro" />
         }} />
-        <Screen name="SGMap" component={SGMap} />
+        <Screen name="Map" component={Map} />
         <Screen name='Profile' component={Profile} options={{
           headerShown: true,
           header: () => <Header showCancel={false} title="Perfil" />
