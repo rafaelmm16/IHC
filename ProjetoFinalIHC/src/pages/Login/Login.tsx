@@ -24,9 +24,9 @@ export default function Login() {
 
     return (
         <View style={styles.container}>
-            <ImageBackground source={require('../../images/login.png')} style={styles.image}>
+            {/* <ImageBackground source={require('../../images/login.png')} style={styles.image}>
                 <Text style={styles.Text}>Login</Text>
-            </ImageBackground>
+            </ImageBackground> */}
             <View style={styles.Form}>
                 <Text style={styles.title}>Email</Text>
                 <TextInput
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         //backgroundColor: '#000000c0',
     },
     image: {
-        flex: 1,
+        
         justifyContent: 'center',
     },
     Form: {

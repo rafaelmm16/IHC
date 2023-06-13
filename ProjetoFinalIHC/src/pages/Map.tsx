@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, Dimensions, useWindowDimensions } from 'react-native';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 
 import MapMarker from '../images/map-marker.png';
@@ -14,10 +14,27 @@ interface Point {
   latitude: number;
   longitude: number;
 }
+const windowDimensions = Dimensions.get('window');
+const screenDimensions = Dimensions.get('screen');
 
 export default function Map() {
   const [points, setPoints] = useState<Point[]>([]);
   const navigation = useNavigation();
+
+  const [dimensions, setDimensions] = useState({
+    window: windowDimensions,
+    screen: screenDimensions,
+  });
+
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener(
+      'change',
+      ({window, screen}) => {
+        setDimensions({window, screen});
+      },
+    );
+    return () => subscription?.remove();
+  });
   
   function handleNavigateToPointDetails(id: number){
     navigation.navigate('PointDetails');
@@ -92,7 +109,8 @@ export default function Map() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,    
+    flex: 12,
+    
   },
   map: {
     height: Dimensions.get('window').height,
@@ -112,16 +130,20 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   footer: {
+    flex: 2,
     position: 'absolute',
-    width: 491,
-    height: 76,
-    top: 1015,
+    width: '100%',
+    height: '9%',
+    top: '88%',
     backgroundColor: '#499c6f',
-    elevation: 4,
-    justifyContent: 'space-around',
-    alignContent: 'space-around',
-    //alignItems: 'center',
-    flexDirection: 'row'
+    //elevation: 4,
+    //justifyContent: 'space-around',
+    //alignContent: 'space-around',
+    //justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'stretch',
+    flexWrap: 'wrap',
+    //flexDirection: 'row'
   },
   footerText: {
     //alignSelf: 'flex-end',
