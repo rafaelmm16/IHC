@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Dimensions, useWindowDimensions } from 'react-native';
+import { StyleSheet, View, Dimensions, useWindowDimensions } from 'react-native';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 
 import MapMarker from '../images/map-marker.png';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import MapViewDirections from 'react-native-maps-directions';
-import { Stack, IconButton, Button } from "@react-native-material/core";
+import { Stack, IconButton, Button, Text } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 interface Point {
   id: number;
@@ -93,14 +93,16 @@ export default function Map() {
 
       <View style={styles.footer}>
         
-        <IconButton icon={props => <Icon name="map" {...props} />} />
-        <Button variant="text" title="Mapa" onPress={handleNavigateToMap}/>
+        <IconButton icon={props => <Icon name="map" {...props} onPress={handleNavigateToMap} />} />
+        <Text variant="button">Mapa</Text>
+        {/* <Button variant="text" title="Mapa" onPress={handleNavigateToMap}/> */}
 
         <IconButton icon={props => <Icon name="clock" {...props} />} />
-        <Button variant="text" title="Horarios" />
+        <Text variant="button">BUTTON TEXT</Text>
 
-        <IconButton icon={props => <Icon name="account" {...props} />} />
-        <Button variant="text" title="Perfil" onPress={handleNavigateToProfile}/>
+        <IconButton icon={props => <Icon name="account" {...props} />} onPress={handleNavigateToProfile} />
+        <Text variant="button">Perfil</Text>
+        {/* <Button variant="text" title="Perfil" onPress={handleNavigateToProfile}/> */}
         
       </View>
     </View>

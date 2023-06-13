@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
+import { IconButton, Text } from '@react-native-material/core';
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
 interface Point {
     id: number;
@@ -82,20 +84,17 @@ export default function Profile() {
 
 
           <View style={styles.footer}>
-          <Text style={styles.footerText}> Mapa </Text>
-          <RectButton style={styles.createPointButton} onPress={handleNavigateToMap}>
-            <Feather name="map" size={20} color="#F5AB35" />
-          </RectButton>
+            <IconButton icon={props => <Icon name="map" {...props} onPress={handleNavigateToMap} />} />
+            <Text variant="button">Mapa</Text>
+            {/* <Button variant="text" title="Mapa" onPress={handleNavigateToMap}/> */}
 
-          <Text style={styles.footerText}> Horários </Text>
-          <RectButton style={styles.createPointButton} onPress={handleNavigateToHours}>
-            <Feather name="clock" size={20} color="#F5AB35" />
-          </RectButton>
+            <IconButton icon={props => <Icon name="clock" {...props} />} />
+            <Text variant="button">BUTTON TEXT</Text>
 
-          <Text style={styles.footerText}> Perfil </Text>
-          <RectButton style={styles.createPointButton} onPress={handleNavigateToProfile}>
-            <Feather name="user" size={20} color="#F5AB35" />
-          </RectButton>
+            <IconButton icon={props => <Icon name="account" {...props} />} onPress={handleNavigateToProfile} />
+            <Text variant="button">Perfil</Text>
+            {/* <Button variant="text" title="Perfil" onPress={handleNavigateToProfile}/> */}
+            
         </View>
       </View>
     )
@@ -103,22 +102,23 @@ export default function Profile() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 12,
     },
     footer: {
-      flex: 1,
+      flex: 2,
       position: 'absolute',
-      //width: 491,
-      //height: 76,
-      //top: 800,
+      width: '100%',
+      height: '9%',
+      top: '88%',
       backgroundColor: '#499c6f',
-      elevation: 4,
-      justifyContent: 'space-around',
+      //elevation: 4,
+      //justifyContent: 'space-around',
       //alignContent: 'space-around',
-      
+      //justifyContent: 'center',
       alignItems: 'center',
+      alignContent: 'stretch',
       flexWrap: 'wrap',
-      flexDirection: 'row'
+      //flexDirection: 'row'
     },
     footerText: {
         color: '#F5AB35',
