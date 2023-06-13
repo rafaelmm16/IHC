@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-import { Feather } from '@expo/vector-icons';
+import { View, StyleSheet, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
+import { Text, Stack } from "@react-native-material/core";
 interface Point {
     id: number;
     name: string;
@@ -12,7 +12,7 @@ interface Point {
 }
 
 export default function Login() {
-    const [points, setPoints] = useState<Point[]>([]);
+    //const [points, setPoints] = useState<Point[]>([]);
     const navigation = useNavigation();
 
     function handleNavigateToMap() {
@@ -24,9 +24,9 @@ export default function Login() {
 
     return (
         <View style={styles.container}>
-            {/* <ImageBackground source={require('../../images/login.png')} style={styles.image}>
-                <Text style={styles.Text}>Login</Text>
-            </ImageBackground> */}
+            <ImageBackground source={require('../../images/login.png')} style={styles.image}>
+                <Text style={styles.Text} variant="h6">Login</Text>
+            </ImageBackground>
             <View style={styles.Form}>
                 <Text style={styles.title}>Email</Text>
                 <TextInput
@@ -62,27 +62,27 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     Text: {
-        width: 300,
-        height: 350,
-        left: 36,
-        top: 300,
+        //width: 300,
+        //height: 350,
+        //left: 0,
+        //top: 300,
         fontSize: 36,
-        color: '#F5AB35',
-        marginTop: '14%',
-        marginBottom: '8%',
+        color: '#be7aeb',
+        marginTop: '35%',
+        //marginBottom: '8%',
         paddingStart: '5%',
         fontWeight: 'bold',
         lineHeight: 84,
-        //backgroundColor: '#000000c0',
     },
     image: {
-        
-        justifyContent: 'center',
+        height: "100%",
+        flex: 1,
+        justifyContent: 'space-evenly'
     },
     Form: {
         fontSize: 28,
         backgroundColor: '#000000',
-        flex: 1,
+        flex: 3,
         paddingStart: '5%',
         paddingEnd: '5%',
     },
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         color: '#D9D9D9',
         fontSize: 12,
         marginTop: 28,
-        width: 35,
+        width: 38,
         height: 20,
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
