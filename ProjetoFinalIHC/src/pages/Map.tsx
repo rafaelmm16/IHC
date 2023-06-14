@@ -36,7 +36,7 @@ export default function Map() {
     return () => subscription?.remove();
   });
   
-  function handleNavigateToPointDetails(id: number){
+  function handleNavigateToPointDetails()/* (id: number) */{
     navigation.navigate('PointDetails');
   }
   function handleNavigateToCreatePoint(){
@@ -81,7 +81,7 @@ export default function Map() {
                 longitude: points.longitude,
               }}
             >
-              <Callout tooltip onPress={() => handleNavigateToPointDetails(points.id)}>
+              <Callout tooltip onPress={() => handleNavigateToPointDetails/* (points.id) */}>
                 <View style={styles.calloutContainer}>
                   <Text style={styles.calloutText}>{points.name}</Text>
                 </View>
@@ -93,16 +93,16 @@ export default function Map() {
 
       <View style={styles.footer}>
         
-        <IconButton icon={props => <Icon name="map" {...props} onPress={handleNavigateToMap} />} />
-        <Text variant="button">Mapa</Text>
-        {/* <Button variant="text" title="Mapa" onPress={handleNavigateToMap}/> */}
+      <IconButton icon={props => <Icon name="google-maps" {...props} onPress={handleNavigateToMap} />} />
+            <Text variant="button">Mapa</Text>
+            {/* <Button variant="text" title="Mapa" onPress={handleNavigateToMap}/> */}
 
-        <IconButton icon={props => <Icon name="clock" {...props} />} />
-        <Text variant="button">BUTTON TEXT</Text>
+            <IconButton icon={props => <Icon name="home-group" {...props} onPress={handleNavigateToPointDetails} />} />
+            <Text variant="button">Casas</Text>
 
-        <IconButton icon={props => <Icon name="account" {...props} />} onPress={handleNavigateToProfile} />
-        <Text variant="button">Perfil</Text>
-        {/* <Button variant="text" title="Perfil" onPress={handleNavigateToProfile}/> */}
+            <IconButton icon={props => <Icon name="account-details" {...props} />} onPress={handleNavigateToProfile} />
+            <Text variant="button">Perfil</Text>
+            {/* <Button variant="text" title="Perfil" onPress={handleNavigateToProfile}/> */}
         
       </View>
     </View>
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '9%',
     top: '88%',
-    backgroundColor: '#499c6f',
+    backgroundColor: '#54b2cac7',
     //elevation: 4,
     //justifyContent: 'space-around',
     //alignContent: 'space-around',

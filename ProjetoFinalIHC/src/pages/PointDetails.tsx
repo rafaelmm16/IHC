@@ -30,11 +30,11 @@ export default function PointDetails() {
   const [points, setPoints] = useState<Points>();
   const params = route.params as PointDetailsRouteParams;
 
-  useEffect(() => {
+/*   useEffect(() => {
     api.get(`points/${params.id}`).then(response => {
       setPoints(response.data);
     })
-  }, [params.id]);
+  }, [params.id]); */
 
   if(!points) {
     return (
@@ -144,11 +144,11 @@ const styles = StyleSheet.create({
   title: {
     color: '#4D6F80',
     fontSize: 30,
-    fontFamily: 'Roboto_700Bold',
+    //fontFamily: 'Roboto_700Bold',
   },
 
   description: {
-    fontFamily: 'Nunito_600SemiBold',
+    //fontFamily: 'Nunito_600SemiBold',
     color: '#5c8599',
     lineHeight: 24,
     marginTop: 16,

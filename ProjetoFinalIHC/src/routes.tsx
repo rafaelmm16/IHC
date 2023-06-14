@@ -49,7 +49,7 @@ export default function Routes() {
         }} />
         <Screen name="PointDetails" component={PointDetails} options={{
           headerShown: true,
-          header: () => <Header showCancel={false} title="Ponto" />
+          header: () => <Header showCancel={false} title="Moradias" />
         }} />
         <Screen name="Hours" component={Hours} options={{
           headerShown: true,

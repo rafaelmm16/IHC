@@ -3,6 +3,8 @@ import { View, StyleSheet, Text } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+
 
 interface HeaderProps {
   title: string;
@@ -19,7 +21,8 @@ export default function Header({ title, showCancel = true }: HeaderProps) {
   return (
     <View style={styles.container}>
       <BorderlessButton onPress={navigation.goBack}>
-        <Feather name="arrow-left" size={24} color="#F5AB35" />
+        {/* <Feather name="arrow-left" size={24} color="#F5AB35" /> */}
+        <Icon name="arrow-u-left-top-bold" size={24} color="#F5AB35"/>
       </BorderlessButton>
       <Text style={styles.title}>
         { title }
@@ -27,7 +30,8 @@ export default function Header({ title, showCancel = true }: HeaderProps) {
 
       { showCancel ? (
           <BorderlessButton onPress={handleGoBackToAppHomePage}>
-            <Feather name="x" size={24} color="#FF669D" />
+            {/* <Feather name="x" size={24} color="#FF669D" /> */}
+            <Icon name="close-thick" size={24} color="#F5AB35"/>
          </BorderlessButton>
         ) : (
           <View />

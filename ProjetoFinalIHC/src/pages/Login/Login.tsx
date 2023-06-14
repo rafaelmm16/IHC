@@ -44,9 +44,9 @@ export default function Login() {
                     <Text style={styles.buttonText}>Entrar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonRegister} onPress={handleNavigateToCreatUser}>
+                {/* <TouchableOpacity style={styles.buttonRegister} onPress={handleNavigateToCreatUser}>
                     <Text style={styles.registerText}>Quero me cadastrar</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
 
                 <TouchableOpacity style={styles.buttonBlank} onPress={handleNavigateToMap}>
                     <Text style={styles.registerText}>Entrar como convidado</Text>
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
         //left: 0,
         //top: 300,
         fontSize: 36,
-        color: '#be7aeb',
-        marginTop: '35%',
+        color: '#7aafeb',
+        marginTop: '55%',
         //marginBottom: '8%',
         paddingStart: '5%',
         fontWeight: 'bold',
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     },
     image: {
         height: "100%",
-        flex: 1,
+        flex: 2,
         justifyContent: 'space-evenly'
     },
     Form: {
