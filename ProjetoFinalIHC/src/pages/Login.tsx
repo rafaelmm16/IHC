@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, LogBox, TouchableOpacity, ImageBackground, InteractionManager, Animated } from 'react-native';
+import { View, StyleSheet, LogBox, TouchableOpacity, ImageBackground, InteractionManager, Animated, Pressable } from 'react-native';
 
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
@@ -17,28 +17,22 @@ export default function Login() {
     const [points, setPoints] = useState<Point[]>([]);
     const navigation = useNavigation();
 
-    useFocusEffect(
-        React.useCallback(() => {
-          const task = InteractionManager.runAfterInteractions(() => {
-            // Expensive task
-          });
-      
-          return () => task.cancel();
-        }, [])
-      );
+    useFocusEffect(() => {
+        
+    });
 
     function handleNavigateToMap() {
         navigation.navigate('Map');
     }
-  
+
     return (
-        
+
         <View style={styles.container}>
-            
-            <ImageBackground source={require('../../images/login.jpg')} style={styles.image}/>
+
+            <ImageBackground source={require('../images/login.jpg')} style={styles.image} />
 
             <View style={styles.Form}>
-                <Stack spacing={2} style={{ margin: 16 }}>
+                <Stack spacing={5} style={{ margin: 15 }}>
                     <TextInput
                         label="Usuario"
                         leading={props => <Icon name="account" {...props} />}
@@ -71,9 +65,10 @@ export default function Login() {
                     elevation={4}
                     category="medium"
                     style={styles.GuessButton}
-                    >
-                    <IconButton icon={props => <Icon name="account-arrow-right" {...props} onPress={handleNavigateToMap} />} />
-                   
+                >
+                    <IconButton icon={(props) =>
+                        <Icon name="account-arrow-right" {...props}
+                            onPress={handleNavigateToMap} />} />
                     <Text variant="caption">Entrar como convidado</Text>
                 </Surface>
             </View>

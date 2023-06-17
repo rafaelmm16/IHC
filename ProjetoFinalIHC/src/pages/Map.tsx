@@ -6,22 +6,22 @@ import MapMarker from '../images/map-marker.png';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import MapViewDirections from 'react-native-maps-directions';
-import { Stack, IconButton, Button, Text, AppBar, FAB } from "@react-native-material/core";
+import { Stack, IconButton, Button, Text, AppBar, FAB, HStack } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-/* interface Point {
+
+interface Point {
   id: number;
   name: string;
   latitude: number;
   longitude: number;
-} */
+}
+
 const windowDimensions = Dimensions.get('window');
 const screenDimensions = Dimensions.get('screen');
 
-export default function Map() {/* 
-  const [points, setPoints] = useState<Point[]>([]); */
+export default function Map() {
+  const [points, setPoints] = useState<Point[]>([]);
   const navigation = useNavigation();
-
-
 
   const [dimensions, setDimensions] = useState({
     window: windowDimensions,
@@ -90,22 +90,25 @@ export default function Map() {/*
 
       <AppBar
         variant="bottom"
+        color='black'
         leading={props => (
-          <IconButton icon={props => <Icon name="google-maps" {...props} 
-          onPress={handleNavigateToMap} />} />
+          <IconButton icon={props => <Icon name="google-maps" {...props} onPress={handleNavigateToMap}/>} {...props} />
         )}
         trailing={props => (
-          <IconButton icon={props => <Icon name="account-details" {...props} />} 
-          onPress={handleNavigateToProfile} />
+          <HStack>
+            <IconButton
+            contentContainerStyle={styles.footer}
+              icon={props => <Icon name="home-group" {...props} onPress={handleNavigateToPointDetails}/>}
+              {...props}
+            />
+            <IconButton
+              icon={props => <Icon name="account-details" {...props} onPress={handleNavigateToProfile}/>}
+              {...props}
+            />
+          </HStack>
         )}
-        style={{ position: "absolute", start: 0, end: 0, bottom: 0 }}
-      >
-        <FAB
-          icon={props => <Icon name="home-group" {...props} 
-          onPress={handleNavigateToPointDetails} />}
-          style={{ position: "absolute", top: -28, alignSelf: "center" }}
-        />
-      </AppBar>
+      />
+
     </View>
   )
 };
@@ -130,5 +133,22 @@ const styles = StyleSheet.create({
     color: '#0089A5',
     fontFamily: 'Roboto_700Bold',
     fontSize: 14,
+  },
+  footer: {
+    //flex: 2,
+    //position: 'absolute',
+    //width: '100%',
+    //height: '9%',
+   // top: '88%',
+    //backgroundColor: '#54b2cac7',
+    //elevation: 4,
+    right: 12,
+    //justifyContent: 'space-around',
+    //alignContent: 'space-around',
+    //justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'stretch',
+    flexWrap: 'wrap',
+    //flexDirection: 'row'
   },
 });

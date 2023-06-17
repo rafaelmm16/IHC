@@ -15,8 +15,7 @@ import ProfileData from './pages/ProfileData';
 import Recharge from './pages/Recharge';
 import Extract from './pages/Extract';
 import Hours from './pages/Hours';
-import Login from './pages/Login/Login';
-import CreatUser from './pages/Login/CreatUser';
+import Login from './pages/Login';
 
 export default function Routes() {
   return (
@@ -25,10 +24,6 @@ export default function Routes() {
         <Screen name="Login" component={Login} options={{
           headerShown: false,
           header: () => <Header showCancel={false} title="Login" />
-        }} />
-        <Screen name="CreatUser" component={CreatUser} options={{
-          headerShown: false,
-          header: () => <Header showCancel={false} title="Cadastro" />
         }} />
         <Screen name="Map" component={Map} />
         <Screen name='Profile' component={Profile} options={{
