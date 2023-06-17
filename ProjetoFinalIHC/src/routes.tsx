@@ -9,7 +9,7 @@ import Map from './pages/Map';
 import PointDetails from './pages/PointDetails';
 import SelectMapPosition from './pages/CreatePoint/SelectMapPosition';
 import PointData from './pages/CreatePoint/PointData';
-import Header from './components/Header'
+import Header from './components/Header';
 import Profile from './pages/Profile';
 import ProfileData from './pages/ProfileData';
 import Recharge from './pages/Recharge';

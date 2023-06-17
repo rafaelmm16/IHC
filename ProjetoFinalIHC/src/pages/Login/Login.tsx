@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, LogBox, TouchableOpacity, ImageBackground, InteractionManager, Animated } from 'react-native';
 
-import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import { Text, Stack, TextInput, IconButton, Surface } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+
 interface Point {
     id: number;
     name: string;
@@ -13,38 +14,29 @@ interface Point {
 }
 
 export default function Login() {
-    //const [points, setPoints] = useState<Point[]>([]);
+    const [points, setPoints] = useState<Point[]>([]);
     const navigation = useNavigation();
+
+    useFocusEffect(
+        React.useCallback(() => {
+          const task = InteractionManager.runAfterInteractions(() => {
+            // Expensive task
+          });
+      
+          return () => task.cancel();
+        }, [])
+      );
 
     function handleNavigateToMap() {
         navigation.navigate('Map');
     }
-    function handleNavigateToCreatUser() {
-        navigation.navigate('CreatUser');
-    }
-
+  
     return (
+        
         <View style={styles.container}>
-            <ImageBackground source={require('../../images/login.jpg')} style={styles.image}>
+            
+            <ImageBackground source={require('../../images/login.jpg')} style={styles.image}/>
 
-                <Surface
-                    elevation={4}
-                    category="medium"
-                    style={{
-                        justifyContent: "center",
-                        alignItems: "center",
-                        width: 100,
-                        height: 40,
-                        top: 75,
-                        marginTop: '50%',
-                        marginStart: 15,
-                        backgroundColor: '#eb7a7ac7'
-                    }}
-                >
-                    <Text variant="caption">Login</Text>
-                </Surface>
-
-            </ImageBackground>
             <View style={styles.Form}>
                 <Stack spacing={2} style={{ margin: 16 }}>
                     <TextInput
@@ -60,9 +52,30 @@ export default function Login() {
                     />
                 </Stack>
 
-                <TouchableOpacity style={styles.GuessButton} onPress={handleNavigateToMap}>
-                    <Text style={styles.GuessText}>Entrar como convidado</Text>
-                </TouchableOpacity>
+                <Surface
+                    elevation={4}
+                    category="medium"
+                    style={{
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: 100,
+                        height: 40,
+                        marginStart: 15,
+                        backgroundColor: '#b84d4d'
+                    }}
+                >
+                    <Text variant="caption">Login</Text>
+                </Surface>
+
+                <Surface
+                    elevation={4}
+                    category="medium"
+                    style={styles.GuessButton}
+                    >
+                    <IconButton icon={props => <Icon name="account-arrow-right" {...props} onPress={handleNavigateToMap} />} />
+                   
+                    <Text variant="caption">Entrar como convidado</Text>
+                </Surface>
             </View>
         </View>
     );
@@ -94,6 +107,6 @@ const styles = StyleSheet.create({
         borderColor: '#acb971',
         backgroundColor: '#6eb2b4',
         padding: 10,
-
+        alignItems: 'center',
     },
 })
