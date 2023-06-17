@@ -67,28 +67,23 @@ export default function Map() {
           longitudeDelta: 0.008,
           }}
       >
-        {points.map(points => {
-          return (
             <Marker
-              key={points.id}
               icon={MapMarker}
               calloutAnchor={{
                 x: 2.5,
                 y: 0.7,
               }}
               coordinate={{
-                latitude: points.latitude,
-                longitude: points.longitude,
+                latitude: -18.7207707,
+                longitude: -39.85614,
               }}
             >
               <Callout tooltip onPress={() => handleNavigateToPointDetails/* (points.id) */}>
                 <View style={styles.calloutContainer}>
-                  <Text style={styles.calloutText}>{points.name}</Text>
+                  <Text style={styles.calloutText}>{/* {points.name} */}</Text>
                 </View>
               </Callout>
             </Marker>
-          )
-        })}
       </MapView>
 
       <View style={styles.footer}>
@@ -111,8 +106,7 @@ export default function Map() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 12,
-    
+    flex: 1,
   },
   map: {
     height: Dimensions.get('window').height,

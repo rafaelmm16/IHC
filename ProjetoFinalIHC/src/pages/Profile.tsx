@@ -3,6 +3,7 @@ import { StyleSheet, View, Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RectButton } from 'react-native-gesture-handler';
 import { IconButton, Text } from '@react-native-material/core';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
