@@ -3,4 +3,4 @@ Repositório para o projeto final da disciplina de Interação Homem-Computador
 
 
 A aplicação não esta finalizada sendo apenas um prototipo.
-:desktop_computer: Mais detalhes sobre a aplicação pode ser encontrada no Figma: ..
+| [top](#objects) | :computer: | `:computer:` | :desktop_computer: | `:desktop_computer:` | [top](#table-of-contents) | Mais detalhes sobre a aplicação pode ser encontrada no Figma: ..
