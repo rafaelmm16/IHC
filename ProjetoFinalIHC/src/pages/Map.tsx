@@ -144,14 +144,9 @@ export default function Map() {
             />
           </HStack>
         )}
-<<<<<<< HEAD
         style={{ position: "absolute", start: 0, end: 0, bottom: 0 }}
       >
       </AppBar>
-=======
-      />
-
->>>>>>> c434670c49db8ba7d6c44dff2e6f34710cc5d746
     </View>
   )
 };

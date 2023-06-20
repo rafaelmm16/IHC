@@ -64,17 +64,11 @@ export default function Login() {
                 <Surface
                     elevation={4}
                     category="medium"
-                    style={styles.GuessButton}
-<<<<<<< HEAD:ProjetoFinalIHC/src/pages/Login/Login.tsx
+                    style={styles.GuessButton}  
                     >
-                    <IconButton icon={(props) => <Icon name="account-arrow-right" {...props} />} onPress={handleNavigateToMap} />
-                   
-=======
-                >
                     <IconButton icon={(props) =>
                         <Icon name="account-arrow-right" {...props}
                             onPress={handleNavigateToMap} />} />
->>>>>>> c434670c49db8ba7d6c44dff2e6f34710cc5d746:ProjetoFinalIHC/src/pages/Login.tsx
                     <Text variant="caption">Entrar como convidado</Text>
                 </Surface>
             </View>
