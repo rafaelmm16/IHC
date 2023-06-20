@@ -72,7 +72,7 @@ export default function Login() {
                     category="medium"
                     style={styles.GuessButton}
                     >
-                    <IconButton icon={props => <Icon name="account-arrow-right" {...props} onPress={handleNavigateToMap} />} />
+                    <IconButton icon={(props) => <Icon name="account-arrow-right" {...props} />} onPress={handleNavigateToMap} />
                    
                     <Text variant="caption">Entrar como convidado</Text>
                 </Surface>

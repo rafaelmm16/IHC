@@ -76,13 +76,50 @@ export default function Map() {/*
             y: 0.7,
           }}
           coordinate={{
-            latitude: -18.7207707,
-            longitude: -39.85614,
+            latitude: -18.716444,
+            longitude: -39.853897,
           }}
         >
           <Callout tooltip onPress={() => handleNavigateToPointDetails/* (points.id) */}>
             <View style={styles.calloutContainer}>
-              <Text style={styles.calloutText}>{/* {points.name} */}</Text>
+              <Text style={styles.calloutText}>House of chiqueiro</Text>
+              <Text>Valor: R$880,00</Text>
+            </View>
+          </Callout>
+        </Marker>
+        <Marker
+          icon={MapMarker}
+          calloutAnchor={{
+            x: 2.5,
+            y: 0.7,
+          }}
+          coordinate={{
+            latitude: -18.719391,
+            longitude: -39.856025,
+          }}
+        >
+          <Callout tooltip onPress={() => {}}>
+            <View style={styles.calloutContainer}>
+              <Text style={styles.calloutText}>Apartamento do Rafael</Text>
+              <Text>Valor: R$1.200,00</Text>
+            </View>
+          </Callout>
+        </Marker>
+        <Marker
+          icon={MapMarker}
+          calloutAnchor={{
+            x: 2.5,
+            y: 0.7,
+          }}
+          coordinate={{
+            latitude: -18.715318,
+            longitude: -39.856111,
+          }}
+        >
+          <Callout tooltip onPress={() => handleNavigateToPointDetails/* (points.id) */}>
+            <View style={styles.calloutContainer}>
+              <Text style={styles.calloutText}>República Canibais</Text>
+              <Text>Valor: R$450,00</Text>
             </View>
           </Callout>
         </Marker>
@@ -100,11 +137,6 @@ export default function Map() {/*
         )}
         style={{ position: "absolute", start: 0, end: 0, bottom: 0 }}
       >
-        <FAB
-          icon={props => <Icon name="home-group" {...props} 
-          onPress={handleNavigateToPointDetails} />}
-          style={{ position: "absolute", top: -28, alignSelf: "center" }}
-        />
       </AppBar>
     </View>
   )
@@ -123,7 +155,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     height: 46,
     justifyContent: 'center',
-    paddingHorizontal: 16,
+    paddingHorizontal: 0,
     width: 160,
   },
   calloutText: {

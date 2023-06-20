@@ -106,8 +106,8 @@ export default function PointDetails() {
             <Marker 
               icon={mapMarkerImg}
               coordinate={{ 
-                latitude: points.latitude,
-                longitude: points.longitude,
+                latitude: -18.716444,
+                longitude: -39.853897,
               }}
             />
           </MapView>
